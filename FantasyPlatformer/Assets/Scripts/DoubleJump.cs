@@ -11,20 +11,10 @@ public class DoubleJump : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player"/* && this.gameObject.tag == "DoubleJump"*/)
-    //    {
-    //        Debug.Log("In");
-    //        player.AddExtraJumps(1);
-    //    }
-    //}
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player"/* && this.gameObject.tag == "DoubleJump"*/)
         {
-            Debug.Log("In");
             player.AddExtraJumps(1);
             Destroy(this.gameObject);
         }

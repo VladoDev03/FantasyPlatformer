@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool isResistentToEnemies = false;
+
     public float speed;
     public float jumpForce;
     private float moveInput;
@@ -82,9 +84,21 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        if (collision.collider.gameObject.tag == "Enemy" || collision.collider.gameObject.tag == "Lava")
+        if (collision.collider.gameObject.tag == "Enemy" && isResistentToEnemies == false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (collision.collider.gameObject.tag == "Lava")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    public void GiveResistance(ResistanceType type)
+    {
+        if (type == ResistanceType.Enemy)
+        {
+            isResistentToEnemies = true;
         }
     }
 }
