@@ -80,10 +80,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag == "Finish")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
         if (collision.collider.gameObject.tag == "Enemy" && isResistentToEnemies == false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
