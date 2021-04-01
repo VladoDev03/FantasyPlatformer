@@ -82,5 +82,9 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        if (collision.collider.gameObject.tag == "Enemy" || collision.collider.gameObject.tag == "Lava")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

@@ -6,6 +6,7 @@ public class Patrol : MonoBehaviour
 {
     public float speed;
     public float distance;
+    public LayerMask layer;
 
     private bool movingRight = true;
 
@@ -15,7 +16,7 @@ public class Patrol : MonoBehaviour
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance, layer);
         if (groundInfo.collider == false)
         {
             if (movingRight == true)
