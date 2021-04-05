@@ -23,6 +23,18 @@ public class PlayerController : MonoBehaviour
     public int extraJumps;
     private int extraJumpsValue;
 
+    private bool isTouchingFront;
+    public Transform frontCheck;
+    private bool wallSliding;
+    public float wallSlidingSpeed;
+    public LayerMask whatIsWall;
+
+    private bool wallJumping;
+    public float xWallForce;
+    public float yWallForce;
+    public float wallJumpTime;
+    public bool isAbleToWallJump;
+
     void Start()
     {
         extraJumpsValue = extraJumps;
@@ -45,6 +57,33 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
         }
+
+        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsWall);
+
+        if (isTouchingFront == true && isGrounded == false && moveInput != 0 && isAbleToWallJump == true)
+        {
+            wallSliding = true;
+        }
+        else
+        {
+            wallSliding = false;
+        }
+
+        if (wallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && wallSliding == true)
+        {
+            wallJumping = true;
+            Invoke("SetWallJumpingToFalse", wallJumpTime);
+        }
+
+        if (wallJumping == true)
+        {
+            rb.velocity = new Vector2(xWallForce * -moveInput, yWallForce);
+        }
     }
 
     void FixedUpdate()
@@ -62,6 +101,11 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
+    }
+
+    void SetWallJumpingToFalse()
+    {
+        wallJumping = false;
     }
 
     void Flip()

@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
-    public bool isUnlocked = true;
+    public bool isUnlocked;
     private Key key;
 
     private void Start()
     {
+        isUnlocked = true;
         key = FindObjectOfType<Key>();
 
         if (key != null)
