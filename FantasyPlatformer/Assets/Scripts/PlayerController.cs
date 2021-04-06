@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool canShoot = false;
+    public GameObject bullet;
+    public GameObject bulletPosition;
+    public GameObject gun;
+
     private bool isResistentToEnemies = false;
 
     public float speed;
@@ -84,6 +89,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(xWallForce * -moveInput, yWallForce);
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && canShoot == true)
+        {
+            GameObject shot = Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation);
+        }
     }
 
     void FixedUpdate()
@@ -95,11 +105,15 @@ public class PlayerController : MonoBehaviour
 
         if (facingRight == false && moveInput > 0)
         {
-            Flip();
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            facingRight = true;
+            //Flip();
         }
         else if (facingRight == true && moveInput < 0)
         {
-            Flip();
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            facingRight = false;
+            //Flip();
         }
     }
 
@@ -108,13 +122,13 @@ public class PlayerController : MonoBehaviour
         wallJumping = false;
     }
 
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
-    }
+    //void Flip()
+    //{
+    //    facingRight = !facingRight;
+    //    Vector3 scaler = transform.localScale;
+    //    scaler.x *= -1;
+    //    transform.localScale = scaler;
+    //}
 
     public void AddExtraJumps(int amount)
     {
@@ -144,5 +158,11 @@ public class PlayerController : MonoBehaviour
         {
             isResistentToEnemies = true;
         }
+    }
+
+    public void GiveBullets()
+    {
+        canShoot = true;
+        gun.SetActive(true);
     }
 }

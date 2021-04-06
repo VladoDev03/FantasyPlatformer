@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1449563259558437959}
   - component: {fileID: 6734761538507801903}
   m_Layer: 0
-  m_Name: Enemy 1
+  m_Name: ShootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  distance: 10
+  distance: 2
   layer:
     serializedVersion: 2
     m_Bits: 256

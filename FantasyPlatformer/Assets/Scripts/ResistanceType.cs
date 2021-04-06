@@ -5,5 +5,6 @@ using UnityEngine;
 public enum ResistanceType
 {
     Enemy,
-    Lava
+    Lava,
+    Bullet
 }
