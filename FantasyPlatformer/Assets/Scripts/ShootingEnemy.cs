@@ -22,8 +22,6 @@ public class ShootingEnemy : MonoBehaviour
         {
             shot = Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation);
 
-            //shot.transform.position = new Vector2(bulletSpeed, 0);
-
             timeBetweenShots = originalTimeBetweenShots;
         }
         else

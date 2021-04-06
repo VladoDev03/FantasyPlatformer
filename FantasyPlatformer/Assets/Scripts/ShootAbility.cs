@@ -13,8 +13,6 @@ public class ShootAbility : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(10);
-
         if (collision.collider.tag == "Player")
         {
             player.GiveBullets();
