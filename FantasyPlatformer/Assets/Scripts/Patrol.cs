@@ -43,5 +43,9 @@ public class Patrol : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (collision.collider.gameObject.tag == "Laser")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

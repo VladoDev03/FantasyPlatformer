@@ -8,6 +8,7 @@ TagManager:
   - Lava
   - Bullet
   - Rocket
+  - Laser
   layers:
   - Default
   - TransparentFX

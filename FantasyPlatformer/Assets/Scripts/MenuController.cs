@@ -15,4 +15,9 @@ public class MenuController : MonoBehaviour
         Debug.Log("Exit");
         Application.Quit();
     }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
