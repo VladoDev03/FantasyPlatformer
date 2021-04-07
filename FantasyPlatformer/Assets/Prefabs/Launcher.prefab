@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6768096065dd842bb84a1744a61768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 5
   timeBetweenShots: 3
   rocket: {fileID: 5921270626654869505, guid: b492c0a06f723384cbbbc1f770be38a6, type: 3}
   rocketPosition: {fileID: 6562903488557513454}

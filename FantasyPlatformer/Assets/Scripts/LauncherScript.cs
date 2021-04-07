@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LauncherScript : MonoBehaviour
 {
+    public float distance;
     public float timeBetweenShots;
     private float originalTimeBetweenShots;
     public GameObject rocket;
@@ -22,7 +23,7 @@ public class LauncherScript : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(this.transform.position, player.transform.position) <= 3)
+        if (Vector2.Distance(this.transform.position, player.transform.position) <= distance)
         {
             canShoot = true;
         }

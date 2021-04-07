@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5921270626654869508}
   - component: {fileID: 5921270626654869507}
-  - component: {fileID: 8669180727608716617}
+  - component: {fileID: 3145054083519759869}
   - component: {fileID: 831380062302148503}
+  - component: {fileID: 2855860297521186772}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Rocket
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8669180727608716617
+--- !u!58 &3145054083519759869
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,3 +114,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketSpeed: 3
+--- !u!50 &2855860297521186772
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921270626654869505}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    private float timeBeforeDestroy = 30;
+    private float timeBeforeDestroy = 3;
     public float rocketSpeed;
 
     private PlayerController player;
@@ -25,6 +25,17 @@ public class Rocket : MonoBehaviour
         else
         {
             timeBeforeDestroy -= Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision");
+        if (collision.collider.tag == "Bullet")
+        {
+            Debug.Log(collision.collider.gameObject.tag);
+            Destroy(collision.collider.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
