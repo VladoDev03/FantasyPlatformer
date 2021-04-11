@@ -5,17 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
+    public int requiredKeys;
     public bool isUnlocked;
-    private Key key;
+    private Key[] keys;
 
     private void Start()
     {
         isUnlocked = true;
-        key = FindObjectOfType<Key>();
+        keys = FindObjectsOfType<Key>();
 
-        if (key != null)
+        if (requiredKeys == 0)
         {
             isUnlocked = false;
+        }
+
+        requiredKeys = keys.Length;
+    }
+
+    private void Update()
+    {
+        if (requiredKeys == 0)
+        {
+            isUnlocked = true;
         }
     }
 

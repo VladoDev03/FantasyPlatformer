@@ -15,7 +15,7 @@ public class Key : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player")
         {
-            finishLevel.isUnlocked = true;
+            finishLevel.requiredKeys--;
             Destroy(this.gameObject);
         }
     }

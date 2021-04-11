@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    private float timeBeforeDestroy = 3;
+    public float timeBeforeDestroy = 3;
     public float rocketSpeed;
 
     private PlayerController player;
