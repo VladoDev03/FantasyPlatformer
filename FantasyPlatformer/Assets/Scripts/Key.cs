@@ -19,4 +19,13 @@ public class Key : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        finishLevel.requiredKeys--;
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 }
