@@ -30,12 +30,11 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision");
         if (collision.collider.tag == "Bullet")
         {
-            Debug.Log(collision.collider.gameObject.tag);
             Destroy(collision.collider.gameObject);
-            Destroy(this.gameObject);
         }
+
+        Destroy(this.gameObject);
     }
 }

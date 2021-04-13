@@ -13,22 +13,24 @@ public class PushEnemy : MonoBehaviour
         enemies = FindObjectsOfType<Patrol>();
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             player.GiveResistance(ResistanceType.Enemy);
 
-            foreach (Patrol enemy in enemies)
+            if (enemies != null)
             {
-                enemy.GetComponent<Rigidbody2D>().gravityScale = 1;
-                Destroy(this.gameObject);
+                foreach (Patrol enemy in enemies)
+                {
+                    if (enemy != null)
+                    {
+                        enemy.GetComponent<Rigidbody2D>().gravityScale = 1;
+                    }
+                }
             }
+
+            Destroy(this.gameObject);
         }
     }
 }

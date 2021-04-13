@@ -27,12 +27,9 @@ public class Cannon : MonoBehaviour
 
     void Update()
     {
-        //float rotZ = Mathf.Atan2(player.transform.rotation.y, player.transform.rotation.x) * Mathf.Rad2Deg;
-        //gun.transform.rotation = Quaternion.Euler(0, 0, rotZ + offset);
-
-        //Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         Vector3 diff = player.transform.position - transform.position;
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
         gun.transform.rotation = Quaternion.Euler(0, 0, rotZ + offset);
 
         if (Vector2.Distance(this.transform.position, player.transform.position) <= distance)
