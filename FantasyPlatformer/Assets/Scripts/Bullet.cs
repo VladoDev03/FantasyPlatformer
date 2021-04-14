@@ -20,4 +20,9 @@ public class Bullet : MonoBehaviour
             timeBeforeDestroy -= Time.deltaTime;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
+    }
 }
