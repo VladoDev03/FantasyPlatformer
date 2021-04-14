@@ -11,15 +11,6 @@ public class ShootAbility : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.collider.tag == "Player")
-    //    {
-    //        player.GiveBullets();
-    //        Destroy(this.gameObject);
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

@@ -6,20 +6,40 @@ using UnityEngine.SceneManagement;
 public class FinishLevel : MonoBehaviour
 {
     public int requiredKeys;
-    public bool isUnlocked;
+    public int enemiesToKill;
+
+    public bool isEnemiesRequired;
+
+    private bool enemiesAreKilled;
+    private bool isUnlocked;
+
     private Key[] keys;
+    private Patrol[] enemies;
 
     private void Start()
     {
-        isUnlocked = true;
+        enemiesAreKilled = false;
+        isUnlocked = false;
+
         keys = FindObjectsOfType<Key>();
 
-        if (requiredKeys == 0)
+        if (isEnemiesRequired)
         {
-            isUnlocked = false;
+            enemies = FindObjectsOfType<Patrol>();
+            enemiesToKill = enemies.Length;
+
+            if (enemiesToKill > 0)
+            {
+                enemiesAreKilled = false;
+            }
         }
 
         requiredKeys = keys.Length;
+
+        if (requiredKeys > 0)
+        {
+            isUnlocked = false;
+        }
     }
 
     private void Update()
@@ -28,11 +48,15 @@ public class FinishLevel : MonoBehaviour
         {
             isUnlocked = true;
         }
+        if (enemiesToKill == 0)
+        {
+            enemiesAreKilled = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag == "Player" && isUnlocked == true)
+        if (collision.collider.gameObject.tag == "Player" && isUnlocked == true && enemiesAreKilled == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

@@ -12,6 +12,13 @@ public class Patrol : MonoBehaviour
 
     public Transform groundDetection;
 
+    private FinishLevel finishLevel;
+
+    private void Start()
+    {
+        finishLevel = FindObjectOfType<FinishLevel>();
+    }
+
     private void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -38,18 +45,22 @@ public class Patrol : MonoBehaviour
         if (collision.collider.gameObject.tag == "Lava")
         {
             Destroy(this.gameObject);
+            finishLevel.enemiesToKill--;
         }
         if (collision.collider.gameObject.tag == "Bullet")
         {
             Destroy(this.gameObject);
+            finishLevel.enemiesToKill--;
         }
         if (collision.collider.gameObject.tag == "Laser")
         {
             Destroy(this.gameObject);
+            finishLevel.enemiesToKill--;
         }
         if (collision.collider.gameObject.tag == "Rocket")
         {
             Destroy(this.gameObject);
+            finishLevel.enemiesToKill--;
         }
     }
 }

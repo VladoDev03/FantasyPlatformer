@@ -11,15 +11,6 @@ public class Key : MonoBehaviour
         finishLevel = FindObjectOfType<FinishLevel>();
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.collider.gameObject.tag == "Player")
-    //    {
-    //        finishLevel.requiredKeys--;
-    //        Destroy(this.gameObject);
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

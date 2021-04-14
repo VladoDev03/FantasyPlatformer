@@ -1364,7 +1364,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 33279f474a25d7a419feec94d05d3f0c, type: 3}
   m_Color: {r: 0, g: 1, b: 0.753031, a: 1}
   m_FlipX: 0
@@ -1429,7 +1429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredKeys: 0
-  isUnlocked: 0
+  enemiesToKill: 0
+  isEnemiesRequired: 0
 --- !u!1 &1861545053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1531,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f478a4a77aa713a49a7f27d313d4b82b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

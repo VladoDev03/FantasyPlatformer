@@ -11,15 +11,6 @@ public class DoubleJump : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player"/* && this.gameObject.tag == "DoubleJump"*/)
-    //    {
-    //        player.AddExtraJumps(1);
-    //        Destroy(this.gameObject);
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
