@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public void Play()
+    public void PlayCave()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void PlayGround()
+    {
+        SceneManager.LoadScene("Level16");
+    }
+
+    public void PlaySky()
+    {
+        SceneManager.LoadScene("Level31");
     }
 
     public void Exit()
