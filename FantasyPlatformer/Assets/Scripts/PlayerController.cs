@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     public float wallJumpTime;
     public bool isAbleToWallJump;
 
+    public LayerMask lava;
+
     void Start()
     {
         extraJumpsValue = extraJumps;
@@ -142,10 +144,6 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if (collision.collider.gameObject.tag == "Lava")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
         if (collision.collider.gameObject.tag == "Bullet")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -155,6 +153,14 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if (collision.collider.gameObject.tag == "Laser")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (collision.collider.gameObject.tag == "Asteroid")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (collision.collider.gameObject.layer == 9)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

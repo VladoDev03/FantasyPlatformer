@@ -5,10 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Lava
   - Bullet
   - Rocket
   - Laser
+  - Asteroid
+  - Border
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Ground
   - Lava
   - Wall
-  - 
+  - Void
   - 
   - 
   - 
