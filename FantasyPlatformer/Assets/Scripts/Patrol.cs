@@ -42,7 +42,8 @@ public class Patrol : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag == "Lava")
+
+        if (collision.collider.gameObject.layer == 9)
         {
             Destroy(this.gameObject);
             finishLevel.enemiesToKill--;
@@ -58,6 +59,15 @@ public class Patrol : MonoBehaviour
             finishLevel.enemiesToKill--;
         }
         if (collision.collider.gameObject.tag == "Rocket")
+        {
+            Destroy(this.gameObject);
+            finishLevel.enemiesToKill--;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
         {
             Destroy(this.gameObject);
             finishLevel.enemiesToKill--;
