@@ -1123,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5485246981069745429, guid: 1d1f62f8dda4a5649a1a6147beff6cd0, type: 3}
       propertyPath: areEnemiesRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5485246981069745429, guid: 1d1f62f8dda4a5649a1a6147beff6cd0, type: 3}
       propertyPath: keysText
