@@ -15,6 +15,7 @@ public class AsteroidsSpawner : MonoBehaviour
 
     void Start()
     {
+        Random.InitState(255);
         originalTimeToSpawn = timeToSpawn;
     }
 
